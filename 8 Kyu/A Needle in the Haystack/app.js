@@ -1,5 +1,7 @@
 function findNeedle(arr) {
-  return "found the needle at position " + arr.map((a, i) => (a == "needle" ? i : "")).join("");
+  // return "found the needle at position " + arr.map((a, i) => (a == "needle" ? i : "")).join("");
+
+  return "found the needle at position " + arr.indexOf("needle");
 }
 
 const haystack_1 = ["3", "123124234", undefined, "needle", "world", "hay", 2, "3", true, false];
