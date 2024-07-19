@@ -1,26 +1,29 @@
 function humanReadable(seconds) {
-  let hours = 0,
-    minutes = 0,
-    second = seconds,
-    kondisi = false;
-  while (kondisi == false) {
-    if (second > 59) {
-      second -= 60;
-      minutes++;
-    }
-    if (minutes > 59) {
-      minutes -= 60;
-      hours++;
-    }
-    if (second < 60 && minutes < 60 && hours < 100) {
-      kondisi = true;
-    }
-  }
-  hours = String(hours);
-  minutes = String(minutes);
-  second = String(second);
+  // let hours = 0,
+  //   minutes = 0,
+  //   second = seconds,
+  //   kondisi = false;
+  // while (kondisi == false) {
+  //   if (second > 59) {
+  //     second -= 60;
+  //     minutes++;
+  //   }
+  //   if (minutes > 59) {
+  //     minutes -= 60;
+  //     hours++;
+  //   }
+  //   if (second < 60 && minutes < 60 && hours < 100) {
+  //     kondisi = true;
+  //   }
+  // }
+  // hours = String(hours);
+  // minutes = String(minutes);
+  // second = String(second);
 
-  return `${hours.length > 1 ? hours : "0" + hours}:${minutes.length > 1 ? minutes : "0" + minutes}:${second.length > 1 ? second : "0" + second}`;
+  // return `${hours.length > 1 ? hours : "0" + hours}:${minutes.length > 1 ? minutes : "0" + minutes}:${second.length > 1 ? second : "0" + second}`;
+
+  let pad = (x) => (x < 10 ? "0" + x : x);
+  return pad(parseInt(seconds / (60 * 60))) + ":" + pad(parseInt((seconds / 60) % 60)) + ":" + pad(seconds % 60);
 }
 
 console.log(humanReadable(0), "00:00:00");
